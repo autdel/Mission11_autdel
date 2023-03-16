@@ -1,0 +1,18 @@
+﻿@{
+}
+
+<!-- Loaded with Books and PageInfo models -->
+@model BooksViewModel
+
+<!-- Loop through the books model and print the information -->
+@foreach (Book b in Model.Books)
+{
+    <partial name="BookSummary" model="b" />
+}
+
+<!-- Dynamic link built based on info in the PaginationTagHelper with Bootstrap styling -->
+<div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" class="btn-group pull-right m-1">
+</div>
+
